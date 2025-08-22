@@ -1,7 +1,6 @@
-# Acai Technical Challenge
+# Technical Challenge
 
-This technical challenge is part of the interview process for a Software Engineer position at [Acai Travel](https://acaitravel.com). 
-If you weren't sent here by one of our engineers, you can [get started here](https://www.acaitravel.com/about/careers).
+
 
 We know you're eager to get to the code, but please read the instructions carefully before you begin.
 
