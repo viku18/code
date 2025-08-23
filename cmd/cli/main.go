@@ -10,17 +10,9 @@ import (
 	"time"
 
 	"github.com/acai-travel/tech-challenge/internal/pb"
-	"github.com/joho/godotenv" // Add this import
 )
 
 func main() {
-	// Load .env file
-	err := godotenv.Load()
-	if err != nil {
-		fmt.Printf("Warning: Could not load .env file: %v\n", err)
-		// Continue without .env file - use system environment variables
-	}
-
 	flag.Usage = func() {
 		fmt.Printf("Usage: acai-cli [command] [options]\n")
 		fmt.Println("Commands:")
@@ -36,13 +28,9 @@ func main() {
 		os.Exit(-1)
 	}
 
-	// Get URL from environment with fallback
-	url := getEnv("API_URL", "http://localhost:8080")
-	
-	// You can also get the OpenAI API key if needed elsewhere
-	openaiKey := getEnv("OPENAI_API_KEY", "")
-	if openaiKey == "" {
-		fmt.Println("Warning: OPENAI_API_KEY not set in environment variables")
+	url := "http://localhost:8080"
+	if v := os.Getenv("API_URL"); v != "" {
+		url = v
 	}
 
 	cli := pb.NewChatServiceJSONClient(url, http.DefaultClient)
@@ -159,11 +147,4 @@ func main() {
 			fmt.Printf("%s, %s:\n%s\n\n", msg.GetRole(), msg.GetTimestamp().AsTime().Format(time.TimeOnly), msg.GetContent())
 		}
 	}
-}
-// Helper function to get environment variables with fallback
-func getEnv(key, defaultValue string) string {
-	if value, exists := os.LookupEnv(key); exists {
-		return value
-	}
-	return defaultValue
 }
