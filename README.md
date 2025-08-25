@@ -1,6 +1,7 @@
-# Technical Challenge
+# Acai Technical Challenge
 
-
+This technical challenge is part of the interview process for a Software Engineer position at [Acai Travel](https://acaitravel.com). 
+If you weren't sent here by one of our engineers, you can [get started here](https://www.acaitravel.com/about/careers).
 
 We know you're eager to get to the code, but please read the instructions carefully before you begin.
 
@@ -55,7 +56,7 @@ you a boost:
 3. **Use standard Go tools.** Use the tools shipped with the Go compiler, such as `go fmt`, `go test`, etc. Avoid 
    unnecessary dependencies or tools. Keep it simple.
 4. **Use Go conventions.** Follow Go conventions for naming, formatting, and structuring your code. Check the 
-   [Effective Go](https://go.dev/doc/effective_go), [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments) and [Go by Example](https://gobyexample.com/).
+   [Effective Go](https://go.dev/doc/effective_go) and [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments).
 5. **Leave comments** where it makes sense. It helps whoever reads the code after you.
 6. **You may use AI assistance/co-pilots**, but remember we are looking for a meaningful and maintainable codebase, not 
    something slapped together quickly.

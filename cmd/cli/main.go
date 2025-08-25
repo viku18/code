@@ -8,11 +8,15 @@ import (
 	"net/http"
 	"os"
 	"time"
+	//"strings"
+	
 
 	"github.com/acai-travel/tech-challenge/internal/pb"
+	//"github.com/joho/godotenv" // Add this import
 )
 
 func main() {
+	
 	flag.Usage = func() {
 		fmt.Printf("Usage: acai-cli [command] [options]\n")
 		fmt.Println("Commands:")
@@ -33,6 +37,7 @@ func main() {
 		url = v
 	}
 
+
 	cli := pb.NewChatServiceJSONClient(url, http.DefaultClient)
 	ctx := context.Background()
 
@@ -42,8 +47,11 @@ func main() {
 		fmt.Println()
 
 		cid := ""
+		//fmt.Printf(" Length of os.Args: %d\n", len(os.Args)) // Debug: Print length of os.Args
 		if len(os.Args) >= 3 {
 			cid = os.Args[2]
+			fmt.Printf("Continuing conversation ID: %s\n", cid)
+			fmt.Println()
 			resp, err := cli.DescribeConversation(ctx, &pb.DescribeConversationRequest{ConversationId: cid})
 
 			if err != nil {
@@ -68,6 +76,7 @@ func main() {
 		for {
 			fmt.Printf("USER:\n")
 			line, _, err := reader.ReadLine()
+			
 			if err != nil {
 				fmt.Printf("Error reading input: %v\n", err)
 				os.Exit(1)

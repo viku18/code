@@ -5,6 +5,7 @@ import (
 	"log/slog"
 	"strings"
 	"time"
+	//"fmt"
 
 	"github.com/acai-travel/tech-challenge/internal/chat/model"
 	"github.com/acai-travel/tech-challenge/internal/pb"
@@ -29,6 +30,7 @@ func NewServer(repo *model.Repository, assist Assistant) *Server {
 }
 
 func (s *Server) StartConversation(ctx context.Context, req *pb.StartConversationRequest) (*pb.StartConversationResponse, error) {
+	
 	conversation := &model.Conversation{
 		ID:        primitive.NewObjectID(),
 		Title:     "Untitled conversation",
@@ -49,18 +51,19 @@ func (s *Server) StartConversation(ctx context.Context, req *pb.StartConversatio
 
 	// choose a title
 	title, err := s.assist.Title(ctx, conversation)
+	
 	if err != nil {
 		slog.ErrorContext(ctx, "Failed to generate conversation title", "error", err)
 	} else {
 		conversation.Title = title
 	}
-
+	
 	// generate a reply
 	reply, err := s.assist.Reply(ctx, conversation)
 	if err != nil {
 		return nil, err
 	}
-
+	
 	conversation.Messages = append(conversation.Messages, &model.Message{
 		ID:        primitive.NewObjectID(),
 		Role:      model.RoleAssistant,
@@ -72,7 +75,7 @@ func (s *Server) StartConversation(ctx context.Context, req *pb.StartConversatio
 	if err := s.repo.CreateConversation(ctx, conversation); err != nil {
 		return nil, err
 	}
-
+	
 	return &pb.StartConversationResponse{
 		ConversationId: conversation.ID.Hex(),
 		Title:          conversation.Title,
