@@ -55,7 +55,7 @@ you a boost:
 3. **Use standard Go tools.** Use the tools shipped with the Go compiler, such as `go fmt`, `go test`, etc. Avoid 
    unnecessary dependencies or tools. Keep it simple.
 4. **Use Go conventions.** Follow Go conventions for naming, formatting, and structuring your code. Check the 
-   [Effective Go](https://go.dev/doc/effective_go) and [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments).
+   [Effective Go](https://go.dev/doc/effective_go), [Go Code Review Comments](https://go.dev/wiki/CodeReviewComments) and [Go by Example](https://gobyexample.com/).
 5. **Leave comments** where it makes sense. It helps whoever reads the code after you.
 6. **You may use AI assistance/co-pilots**, but remember we are looking for a meaningful and maintainable codebase, not 
    something slapped together quickly.
