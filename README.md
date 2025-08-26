@@ -146,7 +146,7 @@ but you need to sign up and get an API key.
 
 **Bonus:** Enable the assistant to provide forecast information as well as current weather.
 
-> Problem/Solution: We created a file *weather.go* which connect to the weathrt API and return the actual weathr information.
+> Problem/Solution: We created a file *weather.go* which connect to the weathrt API and return the actual weather information.
 ---
 
 ### Task 3: Refactor tools
@@ -156,7 +156,7 @@ The team is concerned that the way tools are currently defined in the codebase m
 Refactor `internal/assistant/assistant.go` to make working with tools easier. Feel free to split things into files, introduce new package(s), or reorganize code as you see fit.
 
 **Bonus:** Create a new tool of your choice.
-> Problem/Solution: To refactor the codebase we have created a directoy of tools which contains the *name, definition and execute* interface which is further used for registraion of new tools. All the codebase is modularized and its easy to add any new tools. We have added a new tool named *stocks* which tells you the stock price of any comapany.
+> Problem/Solution: To refactor the codebase we have created a directoy of tools which contains the *name, definition and execute* interface which is further used for registraion of new tools. All the codebase is modularized and its easy to add any new tools. We have added a new tool named *stocks* which tells you the stock price of any comapany. For instance - *"What is the stock price of the apple?"*
 ---
 
 ### Task 4: Create a test for StartConversation API
@@ -168,7 +168,7 @@ The team wants a test for the `StartConversation` API to ensure it works as expe
 - Triggers the assistant's response.
   
 **Bonus:** Add tests for assistant's `Title` method in `internal/assistant/assistant.go`.
-
+> Problem/Solution: The code for testing the `StartConversation` API is wriiten in the file. Please check if this is what it is asking for.
 ---
 
 ### Task 5: Instrument web server

@@ -139,8 +139,6 @@ func TestServer_StartConversation(t *testing.T) {
 		}
 
 		// Verify the conversation was still created despite assistant error
-		// (This depends on your implementation - you might want to check if the conversation
-		// should be rolled back or kept with just the user message)
 		mockAssistant.AssertCalled(t, "Respond", mock.Anything, mock.Anything)
 	}))
 }
