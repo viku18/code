@@ -134,7 +134,7 @@ Barcelona"*.
 
 **Bonus:** Optimize performance for the `StartConversation` API to make it faster.
 
-Problem/Solution: The issue was the lenght of the message which we needed to fix and the we need to provide the corrrect prompt for it in the Title function*.
+> Problem/Solution: The issue was the lenght of the message which we needed to fix and the we need to provide the corrrect prompt for it in the Title function.
 ---
 
 ### Task 2: Fix the weather
