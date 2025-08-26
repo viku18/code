@@ -146,6 +146,7 @@ but you need to sign up and get an API key.
 
 **Bonus:** Enable the assistant to provide forecast information as well as current weather.
 
+> Problem/Solution: We created a file *weather.go* which connect to the weathrt API and return the actual weathr information.
 ---
 
 ### Task 3: Refactor tools
