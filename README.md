@@ -180,3 +180,4 @@ Use [OpenTelemetry](https://opentelemetry.io/docs/languages/go/instrumentation/#
 Keep the exporter and provider configuration simple—the key part is how you capture and configure specific metrics.
 
 **Bonus:** Add tracing to the web server to track request flow through the application.
+> Problem/Solution: The solution is added with some modification in the code and it outputs the result in prometheus format after extracting information from the application endpoint to collect performance data for monitoring.
