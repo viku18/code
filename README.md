@@ -1,7 +1,4 @@
-# Acai Technical Challenge
-
-This technical challenge is part of the interview process for a Software Engineer position at [Acai Travel](https://acaitravel.com). 
-If you weren't sent here by one of our engineers, you can [get started here](https://www.acaitravel.com/about/careers).
+# Technical Challenge
 
 We know you're eager to get to the code, but please read the instructions carefully before you begin.
 
@@ -146,7 +143,7 @@ but you need to sign up and get an API key.
 
 **Bonus:** Enable the assistant to provide forecast information as well as current weather.
 
-> Problem/Solution: We created a file *weather.go* which connect to the weathrt API and return the actual weather information.
+> Problem/Solution: We created a file *weather.go* which connect to the weather API and return the actual weather information.
 ---
 
 ### Task 3: Refactor tools
